@@ -20,7 +20,6 @@ public class ClickSound : MonoBehaviour
         } 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         gameObject.AddComponent<AudioSource>();
@@ -30,7 +29,6 @@ public class ClickSound : MonoBehaviour
         button.onClick.AddListener(() => PlaySound());
     }
 
-    // Update is called once per frame
     void PlaySound()
     {
         source.PlayOneShot(sound);

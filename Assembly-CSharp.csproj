@@ -71,11 +71,9 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Scripts\ClickSound.cs" />
-    <Compile Include="Assets\Scripts\ExitGame.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ManageButtons.cs" />
     <Compile Include="Assets\Scripts\MostraUltimaPalavraOculta.cs" />
-    <Compile Include="Assets\Scripts\StopMusic.cs" />
     <None Include="Assets\Resources\palavras.txt" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <Reference Include="UnityEngine">

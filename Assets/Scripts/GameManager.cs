@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public ManageButtons fader;
+    public ManageButtons fader; // Componente que ira fazer o Fade da cena lab1
 
     private int numTentativas;
     private int maxNumTentativas;
@@ -15,13 +15,11 @@ public class GameManager : MonoBehaviour
 
     private string palavraOculta = "";
 
-    // private string[] palavrasOcultas = new string[] { "carro", "elefante", "futebol" };
-
     private int tamanhoPalavraOculta;
     char[] letrasOcultas;
     bool[] letrasDescobertas;
     
-    // Start is called before the first frame update
+
     void Start()
     {
         centro = GameObject.Find("centroDaTela");
@@ -33,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         CheckTeclado();
@@ -54,15 +52,13 @@ public class GameManager : MonoBehaviour
 
     void InitGame()
     {
-        // int numeroAleatorio = Random.Range(0, palavrasOcultas.Length);
-        // palavraOculta = palavrasOcultas[numeroAleatorio];
 
         palavraOculta = PegaUmaPalavraDoArquivo();
         tamanhoPalavraOculta = palavraOculta.Length;
         palavraOculta = palavraOculta.ToUpper();
         letrasOcultas = new char[tamanhoPalavraOculta];
         letrasDescobertas = new bool[tamanhoPalavraOculta];
-        letrasOcultas = palavraOculta.ToCharArray(); // Copia a palavra no array de letras
+        letrasOcultas = palavraOculta.ToCharArray();
 
         maxNumTentativas = palavraOculta.Length + 5; // se a palavra for muito grande é quase impossivel de ganhar com apenas 10 de max tentativas
 
@@ -84,7 +80,7 @@ public class GameManager : MonoBehaviour
                 {
                     VerificaSePalavraDescoberta(); // O jogo tinha um bug em que o jogador podia escolher a ultima letra faltante e mesmo que acertasse ele perdia
                                                    // Outra solucao seria trocar o > por >= 
-                    fader.StartForca();
+                    fader.StartForca();  // faz um fade para a cena de enforcado
                 }
 
                 for(int i = 0; i<=tamanhoPalavraOculta; i++)
@@ -128,7 +124,7 @@ public class GameManager : MonoBehaviour
         if (condicao)
         {
             PlayerPrefs.SetString("ultimaPalavraOculta", palavraOculta);
-            fader.StartSalvo();
+            fader.StartSalvo(); // Faz um Fade para a cena de voce ganhou
         }
     }
 
